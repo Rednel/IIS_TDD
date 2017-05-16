@@ -21,4 +21,9 @@ public class TestFactorial {
 		assertEquals(new Integer(2), new Integer(Factorial.calcular(2)));
 	}
 	
+	@Test
+	public void factorial3es6(){
+		assertEquals(new Integer(6), new Integer(Factorial.calcular(3)));
+	}
+	
 }
