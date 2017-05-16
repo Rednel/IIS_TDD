@@ -2,28 +2,33 @@ package prFactorial;
 
 import static org.junit.Assert.*;
 
+import java.util.Arrays;
+import java.util.Collection;
+
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
 
+@RunWith(Parameterized.class)
 public class TestFactorial {
+	@Parameters
+	public static Collection<Integer[]> valores(){
+		Integer[][] val = {{0,1},{1,1},{2,2},{3,6},{4,24},{5,120}};
+		return Arrays.asList(val);
+	}
+	
+	private int entrada,salida;
 
-	@Test
-	public void factorial0es1(){
-		assertEquals(new Integer(1),new Integer(Factorial.calcular(0)));
+	public TestFactorial(int e, int s){
+		entrada = e;
+		salida = s;
 	}
 	
 	@Test
-	public void factorial1es1(){
-		assertEquals(new Integer(1), new Integer(Factorial.calcular(1)));
+	public void factorialPruebas(){
+		assertEquals(new Integer(salida),new Integer(Factorial.calcular(entrada)));
 	}
 	
-	@Test
-	public void factorial2es2(){
-		assertEquals(new Integer(2), new Integer(Factorial.calcular(2)));
-	}
-	
-	@Test
-	public void factorial3es6(){
-		assertEquals(new Integer(6), new Integer(Factorial.calcular(3)));
-	}
 	
 }

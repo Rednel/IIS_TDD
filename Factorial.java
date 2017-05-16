@@ -6,12 +6,10 @@ public class Factorial {
 		int salida;
 		if(entrada < 2){
 			salida = 1;
-		}else if(entrada == 2){
-			salida = 2;
 		}else{
-			salida = 6;
+			salida = entrada*calcular(entrada-1);
 		}
-			return salida;
+		return salida;
 	}
 	
 }
